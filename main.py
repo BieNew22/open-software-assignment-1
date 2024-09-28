@@ -30,12 +30,14 @@ while True:
     else:
         break
     
-
+res = -1
 if op == "+":
-    print(add(num1, num2))
+    res = add(num1, num2)
 elif op == "-":
-    print(sub(num1, num2))
+    res = sub(num1, num2)
 elif op == '*':
-    print(mul(num1, num2))
+    res = mul(num1, num2)
 else:
-    print(div(num1, num2))
+    res = div(num1, num2)
+
+print(f"Calculation result : {num1} {op} {num2} = {res}")
