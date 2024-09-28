@@ -19,14 +19,32 @@ def div(a, b):
     return a / b
 
 
-num1, num2 = map(int, input("두 수를 입력 >> ").split())
-op = input("연산 기호를 입력(+, -, *, /) >> ")
+num1, num2 = -1, -1
+while True:
+    try:
+        num1, num2 = map(int, input("두 정수를 공백을 두고 입력 >> ").split())
 
+        break
+    except:
+        print("=== error : 두 정수를 입력하셔야 합니다. ===")
+
+op_set = {'-', '*', '+', '/'}
+while True:
+    op = input("연산 기호를 입력(+, -, *, /) >> ")
+
+    if op not in op_set:
+        print("-, +, *, / 중 하나를 입력하세요!!")
+    else:
+        break
+    
+res = -1
 if op == "+":
-    print("result :", add(num1, num2))
+    res = add(num1, num2)
 elif op == "-":
-    print("result :", sub(num1, num2))
+    res = sub(num1, num2)
 elif op == '*':
-    print("result :", mul(num1, num2))
+    res = mul(num1, num2)
 else:
-    print("result :", div(num1, num2))
+    res = div(num1, num2)
+
+print(f"Calculation result : {num1} {op} {num2} = {res}")
